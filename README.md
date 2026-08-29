@@ -1,16 +1,85 @@
-# React + Vite
+Product Store is a simple React web application where users can browse and find products easily. The application gets product information from the Fake Store API and provides options to search, filter, sort, and view product details.
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Features
 
-Currently, two official plugins are available:
+* Display products with image, title, price, category, and rating
+* Search products by title
+* Filter products by category
+* Sort products by price and rating
+* View complete product details
+* Show loading message while products are being loaded
+* Handle API errors
+* Show a message when no products are found
+* Responsive layout for different screen sizes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technologies Used
 
-## React Compiler
+* React
+* Vite
+* JavaScript
+* CSS
+* React Router
+* Fake Store API
+* Git and GitHub
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## API
 
-## Expanding the Oxlint configuration
+This project uses the Fake Store API to get product information.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+API used:
+
+https://fakestoreapi.com/products
+
+For individual product details:
+
+https://fakestoreapi.com/products/:id
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/NSri4112005/React-Assesment-Week5.git
+```
+
+### 2. Open the project
+
+```bash
+cd React-Assesment-Week5
+```
+
+### 3. Install the required packages
+
+```bash
+npm install
+```
+
+### 4. Start the application
+
+```bash
+npm run dev
+```
+
+After running the command, open the local URL shown in the terminal.
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── Header.jsx
+│   ├── ProductCard.jsx
+│   ├── ProductDetails.jsx
+│   ├── ProductList.jsx
+│   ├── SearchBar.jsx
+│   ├── CategoryFilter.jsx
+│   └── SortFilter.jsx
+├── App.jsx
+├── App.css
+├── index.css
+└── main.jsx
+```
+
+## What I Learned
+
+While building this project, I practiced React concepts such as components, props, state management using `useState`, API calls using `useEffect`, event handling, conditional rendering, and React Router. I also practiced using Git branches, commits, and GitHub for project management.
