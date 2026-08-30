@@ -75,7 +75,7 @@ body {
 h1 {
   font-family: var(--heading);
   font-weight: 700;
-  color: var(--code-bg);
+  color:darkorange;
   font-size: 56px;
 }
 h2{
