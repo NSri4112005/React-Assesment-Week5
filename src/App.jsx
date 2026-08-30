@@ -1,13 +1,20 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import "./App.css";
+
 import Header from "./components/Header";
 import ProductList from "./components/ProductList";
 import SearchBar from "./components/SearchBar";
 import CategoryFilter from "./components/CategoryFilter";
-import "./App.css";
-function App() {
+import SortFilter from "./components/SortFilter";
+import ProductDetails from "./components/ProductDetails";
+
+function ProductStore() {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
+  const [sort, setSort] = useState("default");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -41,6 +48,22 @@ function App() {
     return matchesSearch && matchesCategory;
   });
 
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    if (sort === "price-low") {
+      return a.price - b.price;
+    }
+
+    if (sort === "price-high") {
+      return b.price - a.price;
+    }
+
+    if (sort === "rating") {
+      return b.rating.rate - a.rating.rate;
+    }
+
+    return 0;
+  });
+
   if (loading) {
     return <h2>Loading products...</h2>;
   }
@@ -63,14 +86,34 @@ function App() {
           category={category}
           setCategory={setCategory}
         />
+
+        <SortFilter
+          sort={sort}
+          setSort={setSort}
+        />
       </div>
 
       {filteredProducts.length === 0 ? (
         <h2>No products found.</h2>
       ) : (
-        <ProductList products={filteredProducts} />
+        <ProductList products={sortedProducts} />
       )}
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<ProductStore />} />
+
+        <Route
+          path="/products/:id"
+          element={<ProductDetails />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
