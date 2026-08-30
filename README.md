@@ -1,3 +1,6 @@
+## Project Description
+
+
 A simple React-based Product Store application for browsing products.The application gets product information from the Fake Store API and provides options to search, filter, sort, and view product details.
 
 ## Features
