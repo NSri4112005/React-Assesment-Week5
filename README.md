@@ -1,4 +1,4 @@
-Product Store is a simple React web application where users can browse and find products easily. The application gets product information from the Fake Store API and provides options to search, filter, sort, and view product details.
+A simple and user-friendly Product Store web application built using React and Vite.s The application gets product information from the Fake Store API and provides options to search, filter, sort, and view product details.
 
 ## Features
 
